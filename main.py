@@ -23,13 +23,14 @@ def maak_taak():
     summary = data.get("titel")
     beschrijving = data.get("beschrijving", "")
     assignee = data.get("toewijzen_aan", None)
+    issuetype = data.get("issuetype", "Task")  # standaard Task als niet opgegeven
 
     payload = {
         "fields": {
             "project": {"key": "GND"},
             "summary": summary,
             "description": beschrijving,
-            "issuetype": {"name": "Task"}
+            "issuetype": {"name": issuetype}
         }
     }
 
